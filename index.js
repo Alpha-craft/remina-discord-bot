@@ -16,6 +16,10 @@ const client = new Client({
 	] 
 });
 
+const fredericaPresent = "<:FredericaPresent:1086311817812398090>";
+const fredercaBetsuni = "<:FredericaBetsuni:900373902088355870>";
+const ainurID = 790416033471004702;
+
 client.commands = new Collection();
 
 const commandsPath = path.join(__dirname, 'commands');
@@ -39,6 +43,31 @@ client.on(Events.InteractionCreate, async (interaction) => {
 	const command = interaction.client.commands.get(interaction.commandName);
 
 	await command.execute(interaction);
+});
+
+client.on('messageCreate',async message => {
+
+	if (message.author.username == client.user.username){
+    return
+  }
+
+  if (message.content.toLowerCase() == 'frederica'){
+
+		if(message.author.id == ainurID){
+      await message.channel.send('Ada apa Ainur-sama?')
+      await message.channel.sendTyping()
+      await message.channel.send("Saya siap membantu kapanpun")
+      await message.channel.send(fredericaPresent)
+
+    }else{
+      await message.channel.sendTyping()
+      await message.channel.sendTyping()
+      await message.channel.sendTyping()
+      await message.channel.send('ada keperluan apa')
+      await message.channel.send(fredercaBetsuni)
+
+    }
+	}
 });
 
 client.on(Events.MessageCreate, async (interaction) => {
