@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:16.19
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
