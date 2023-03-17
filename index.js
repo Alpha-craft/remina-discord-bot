@@ -69,7 +69,7 @@ client.once(Events.ClientReady, (interaction) => {
 	console.log(`${interaction.user.tag} is online, put the lights on!`);
 
 	client.user.setPresence({
-		activities: [{ name: `over humanity`, type: ActivityType.Watching }],
+		activities: [{ name: `Ainur-sama`, type: ActivityType.Listening }],
 		status: 'online',
 	});
 });
